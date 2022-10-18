@@ -1,6 +1,7 @@
 # import datetime
 
 import os
+from pathlib import Path
 
 from time import sleep
 from selenium import webdriver
@@ -125,8 +126,8 @@ class ChromeAuto:
     def opcao608(self):
         self.chrome.find_element('id', '3').send_keys('608')
         self._espera_ssw(janela_in='principal', janela_out='608', tipo=By.ID, id='1')
-        print(f'{os.getcwd()}/xmlssw/ssw.zip')
-        self.chrome.find_element(By.ID, '1').send_keys(f'{os.getcwd()}/xmlssw/ssw.zip')
+        print(f'{Path.home()}/DigitadorOrbi/xmlssw/ssw.zip')
+        self.chrome.find_element(By.ID, '1').send_keys(f'{Path.home()}/DigitadorOrbi/xmlssw/ssw.zip')
         self.chrome.find_element(By.ID, '2').click()
         self._espera_ssw_aguarde(self.chrome.find_element(By.ID, 'procimg').text)
         self.chrome.close()

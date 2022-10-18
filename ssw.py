@@ -1,6 +1,6 @@
-import os
+from pathlib import Path
 import zipfile
-
+import os
 import xmltodict
 from time import sleep
 from selenim import ChromeAuto
@@ -13,8 +13,8 @@ class TratXml:
         self.cnpjs = list()
         self.resuldados = list()
         self.path_dowload = '/home/dannedeyble/Downloads'  # sem a / final
-        self.path_xmls = f'{os.getcwd()}/XMLs/'
-        self.path_ssw = f'{os.getcwd()}/xmlssw/'
+        self.path_xmls = f'{Path.home()}/DigitadorOrbi/XMLs/'
+        self.path_ssw = f'{Path.home()}/DigitadorOrbi/xmlssw/'
         self.contador_xmls = 1
         self.notas = dict()
         self.transportadoras = list()
